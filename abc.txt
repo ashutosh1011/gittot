@@ -1,0 +1,7 @@
+git config --global user.name "ashutosh1011"
+git config --global user.email "ramtripathi@gmail.com"
+
+git clone httpPath
+git add .
+git commit -m "anything"
+git push -u origin main
