@@ -14,3 +14,7 @@ docker build -t abcd .
 docker run -it abcd
 
 -cp
+ vi hello.sh
+  bash hello.sh
+
+#!/bin/bash
