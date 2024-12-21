@@ -5,3 +5,12 @@ git clone httpPath
 git add .
 git commit -m "anything"
 git push -u origin main
+
+
+
+//Docker
+docker build -t abcd .
+
+docker run -it abcd
+
+-cp
