@@ -18,3 +18,73 @@ docker run -it abcd
   bash hello.sh
 
 #!/bin/bash
+
+from openjdk:latest
+workdir /App
+copy . /App
+RUN ["javac" "src/Hello.java"]
+CMD ["java","-cp","bin","hello"]
+========================================================================================================================================
+FROM alpine:latest
+
+WORKDIR /app
+
+COPY echo.sh .
+
+RUN chmod +x echo.sh
+
+CMD ["sh", "./echo.sh"]
+
+
+selelium dependencies
+
+
+public class TestNGPractice {
+	
+	WebDriver driver;
+	
+	@BeforeTest
+	public void setup() {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+	}
+	
+	@Test
+	public void GoogleTestHarsh() throws InterruptedException {
+		driver.get("https://www.google.com");
+		
+		driver.findElement(By.id("APjFqb")).sendKeys("Harsh batra");
+		
+		Thread.sleep(2000);
+	}
+	
+	@Test
+	public void GoogleTestArpit() throws InterruptedException {
+		driver.get("https://www.google.com");
+		
+		driver.findElement(By.id("APjFqb")).sendKeys("Arpit sarap");
+		
+		Thread.sleep(2000);
+	}
+	
+	@AfterTest
+	public void quit() {
+		driver.quit();
+	}
+}
+
+public class TestGoogle {
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://www.google.com");
+		
+		driver.findElement(By.id("APjFqb")).sendKeys("Harsh batra");
+		
+		Thread.sleep(2000);
+		
+		driver.quit();
+	}
+}
